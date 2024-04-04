@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="my_dimen_values">
+        <item>10sp</item>
+        <item>16sp</item>
+        <item>24sp</item>
+    </array>
+    <array name="my_dimen_names">
+        <item>小寫</item>
+        <item>中寫</item>
+        <item>大寫</item>
+    </array>
+</resources>
