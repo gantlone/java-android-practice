@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:gravity="center_vertical"
+    android:layout_height="wrap_content">
+    <!--    根节点为水平的LinearLayout，高度wrap_content，设置所有内容垂直居中-->
+    <ImageView
+        android:id="@+id/row_view_iv"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/hangzhou" />
+    <!--    所有的id以row_view作为前缀，便于查找-->
+    <!--    ImageView设置缩放为中线点裁剪-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+        <!--    内嵌一个垂直的LinearLayout，放置两个TextView，设置权重使之占据剩余空间-->
+        <!--    内嵌的LinearLayout设置左边距，并设置垂直居中-->
+        <TextView
+            android:id="@+id/row_view_tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:text="Name" />
+        <TextView
+            android:id="@+id/row_view_tv_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone" />
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/row_view_iv_call"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:srcCompat="@android:drawable/sym_action_call" />
+    <!--    row_view_iv_call的图标可在图片资源设置向导中输入call搜索-->
+</LinearLayout>

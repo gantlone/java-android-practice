@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="image_values">
+        <item>@drawable/hangzhou</item>
+        <item>@drawable/ningbo</item>
+        <item>@drawable/wenzhou</item>
+    </array>
+    <array name="image_names">
+        <item>台北</item>
+        <item>北投</item>
+        <item>公館路</item>
+    </array>
+</resources>
