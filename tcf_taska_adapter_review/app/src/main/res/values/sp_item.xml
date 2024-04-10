@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="array_name">
+        <item>藍</item>
+        <item>黑</item>
+        <item>綠</item>
+    </array>
+    <array name="array_color">
+        <item>#00BCD4</item>
+        <item>#000</item>
+        <item>#009688</item>
+    </array>
+</resources>
