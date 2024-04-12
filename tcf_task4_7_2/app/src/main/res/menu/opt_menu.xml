@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/opt_set_all"
+        android:title="全选" />
+    <item
+        android:id="@+id/opt_clear_all"
+        android:title="全不选" />
+    <item
+        android:id="@+id/opt_set_reverse"
+        android:title="反向选择" />
+    <item
+        android:id="@+id/opt_send"
+        android:title="发送" />
+</menu>

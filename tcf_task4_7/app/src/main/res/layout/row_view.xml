@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants">
+
+    <!--  若不增加android:descendantFocusability属性，适配器焦点会被CheckBox抢占  -->
+    <!--  导致ListView无法响应点击侦听，ListView的ContextMenu也无法产生    -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" >
+        <TextView android:id="@+id/row_view_tv_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20sp" android:textColor="#000" android:text="name"/>
+        <TextView android:id="@+id/row_view_tv_phone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="phone"/>
+    </LinearLayout>
+    <CheckBox android:id="@+id/row_view_cb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=""/>
+
+</LinearLayout>
