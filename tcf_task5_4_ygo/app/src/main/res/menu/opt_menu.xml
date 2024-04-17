@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/opt_all_Chk"
+        android:icon="@android:drawable/stat_notify_missed_call"
+        android:title="全選"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/opt_all_unChk"
+        android:title="全不選" />
+</menu>
