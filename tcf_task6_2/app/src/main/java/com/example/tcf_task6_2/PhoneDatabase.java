@@ -78,11 +78,26 @@ public class PhoneDatabase {
         return c;
     }
 
-    public long insertData(String name, String phone){
+    public void insertData(String name, String phone){
         ContentValues cv = new ContentValues();
         cv.put(KEY_NAME, name);
         cv.put(KEY_PHONE, phone);
-        return db.insert(TABLE_NAME, null, cv);
+        db.insert(TABLE_NAME, null, cv);
     }
+
+    public void updData(Phone phone){
+        ContentValues cv = new ContentValues();
+        cv.put("name", phone.getPhone_name());
+        cv.put("phone", phone.getPhone_number());
+        db.update(TABLE_NAME, cv,"_id = ? ",
+                new String[]{String.valueOf(phone.getPhone_id())});
+    }
+
+    public void delData(Phone phone){
+        db.delete(TABLE_NAME, "_id = ? and name = ? and phone = ? ",
+                new String[]{String.valueOf(phone.getPhone_id()),phone.getPhone_name(), phone.getPhone_number()});
+    }
+
+
 
 }

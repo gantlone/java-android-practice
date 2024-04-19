@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.SimpleCursorAdapter;
@@ -18,14 +19,14 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     PhoneDatabase db;
     ListViewAdapter ada;
-
+    ListView lv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_main);
 
         //1
-        ListView lv = findViewById(R.id.listView);
+        lv = findViewById(R.id.listView);
         Button bt_reset = findViewById(R.id.bt_reset);
         Button bt_insert = findViewById(R.id.bt_insert);
 
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             list.add(phone);
         }
         //3
-        ada = new ListViewAdapter(this, list);
+        ada = new ListViewAdapter(this, list, db);
         bt_insert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 db.drop();
+                ada.resetList();
             }
         });
 
@@ -75,7 +77,8 @@ public class MainActivity extends AppCompatActivity {
         int n2 = rd.nextInt(s2.length());
         String name = String.format("%s%s",s1.charAt(n1),s2.charAt(n2));
         String phone = String.format("%04d", rd.nextInt(10000));
-        long i = db.insertData(name,phone);
-        Log.d("l",String.valueOf(i));
+        db.insertData(name,phone);
+        ada.resetList();
+
     }
 }

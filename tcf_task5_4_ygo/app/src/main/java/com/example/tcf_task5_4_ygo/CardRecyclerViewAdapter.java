@@ -126,6 +126,7 @@ public class CardRecyclerViewAdapter extends RecyclerView.Adapter<CardRecyclerVi
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Toast.makeText(context, aa[i], Toast.LENGTH_SHORT).show();
+                        holder.tv_card_name.setText(aa[i]);
                     }
 
                 });
