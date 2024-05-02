@@ -9,15 +9,10 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Tcf_task5_4_ygo"
-
-        android:usesCleartextTraffic="true"
-
+        android:theme="@style/Theme.Tcf_task_list_recycler"
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
-            android:launchMode="singleInstance"
-            android:configChanges="orientation|screenSize"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,13 +20,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity2"
-            android:parentActivityName=".MainActivity"
-            android:launchMode="singleInstance">
+        <activity
+            android:name=".page2"
+            android:launchMode="singleInstance"
+                android:parentActivityName=".MainActivity"
+            android:exported="true">
+
         </activity>
+
     </application>
-    <uses-permission android:name="android.permission.INTERNET">
-
-    </uses-permission>
-
+<uses-permission android:name="android.permission.INTERNET"></uses-permission>
 </manifest>

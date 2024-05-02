@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="img_view">
+        <item>@drawable/ningbo</item>
+        <item>@drawable/wenzhou</item>
+        <item>@drawable/hangzhou</item>
+    </array>
+</resources>

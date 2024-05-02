@@ -6,12 +6,15 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.OrientationEventListener;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -25,6 +28,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     RecyclerView rv;
+    private boolean isLandscape = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +65,46 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
+
+        OrientationEventListener orientationEventListener = new OrientationEventListener(this) {
+            @Override
+            public void onOrientationChanged(int i) {
+                if (i == OrientationEventListener.ORIENTATION_UNKNOWN) {
+                    return;
+                }
+
+                // 根据设备方向判断是否为横屏
+                if (i >= 45 && i < 135) {
+                    // 横屏
+                    if (!isLandscape) {
+                        isLandscape = true;
+                        setLandscapeLayout();
+                    }
+                } else if (i >= 225 && i < 315) {
+                    // 反向横屏
+                    if (!isLandscape) {
+                        isLandscape = true;
+                        setLandscapeLayout();
+                    }
+                } else {
+                    // 竖屏
+                    if (isLandscape) {
+                        isLandscape = false;
+                        setPortraitLayout();
+                    }
+                }
+            }
+        };
+    }
+
+    private void setLandscapeLayout() {
+        // 加载横屏布局
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+    }
+
+    private void setPortraitLayout() {
+        // 加载竖屏布局
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
     public void showList(ArrayList<Card> readList){
