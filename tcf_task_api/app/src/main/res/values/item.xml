@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="sp_item_name">
+        <item>羅成員</item>
+        <item>雄文安</item>
+        <item>泰山</item>
+    </array>
+    <array name="sp_item_color">
+        <item>#000</item>
+        <item>#03A9F4</item>
+        <item>#FFC107</item>
+    </array>
+</resources>
