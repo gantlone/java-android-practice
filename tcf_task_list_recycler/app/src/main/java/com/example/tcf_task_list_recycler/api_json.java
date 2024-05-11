@@ -49,10 +49,10 @@ public class api_json implements Callable<String> {
     }
 
     public static ArrayList<Card> json2List(String body) throws JSONException {
-        JSONObject all = new JSONObject(body);
-        JSONArray data = all.getJSONArray("data");
+        JSONObject all = new JSONObject(body); //{
+        JSONArray data = all.getJSONArray("data"); //[
         ArrayList<Card> list = new ArrayList<>();
-        ExecutorService es = Executors.newFixedThreadPool(1);
+//        ExecutorService es = Executors.newFixedThreadPool(1);
         for(int i=0;i<data.length();i++){
             JSONObject obj = data.getJSONObject(i);
             String atk = safetyString(obj,"atk");
@@ -71,7 +71,7 @@ public class api_json implements Callable<String> {
 //            }
             list.add(new Card(name,atk,def,bp));
         }
-        es.shutdown();
+//        es.shutdown();
         return list;
     }
 

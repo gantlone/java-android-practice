@@ -148,7 +148,10 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.roger:
-                Toast.makeText(this, "柔成員", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "柔成員", Toast.LENGTH_SHORT).show();
+                Intent it = new Intent(MainActivity.this, page3.class);
+                startActivity(it);
+                
                 break;
             case R.id.neverlose:
                 Toast.makeText(this, "雄文案", Toast.LENGTH_SHORT).show();
