@@ -1,5 +1,7 @@
 package com.example.tcf_task_fragment.ui.dashboard;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -49,6 +51,9 @@ public class DashboardFragment extends Fragment {
         PhoneLiveData vm = new ViewModelProvider(getActivity()).get(PhoneLiveData.class);
         MutableLiveData<ArrayList<Phone>> listLiveData = vm.getListLiveData();
         MutableLiveData<Phone> itemLiveData = vm.getItemLiveData();
+        SharedPreferences sp = getContext().getSharedPreferences("data", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.commit()
 
         //2
         Phone pd = itemLiveData.getValue();

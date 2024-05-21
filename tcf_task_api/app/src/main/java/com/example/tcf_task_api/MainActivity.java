@@ -101,6 +101,12 @@ public class MainActivity extends AppCompatActivity {
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setAdapter(ada);
 
+        Spinner sp = findViewById(R.id.spinner);
+        Resources rr = getResources();
+        String[] ss = rr.getStringArray(R.array.sp_item_name);
+        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_list_item_1, ss);
+        sp.setAdapter(aa);
+
 
     }
 

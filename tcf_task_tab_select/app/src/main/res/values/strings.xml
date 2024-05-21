@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">tcf_task_tab_select</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string-array name="name">
+        <item>羅成員</item>
+        <item>雄文案</item>
+        <item>泰山</item>
+        <item>卡比</item>
+        <item>百變怪</item>
+        <item>棉花糖</item>
+    </string-array>
+    <array name="color">
+        <item>#000</item>
+        <item>@color/purple_500</item>
+        <item>#4CAF50</item>
+        <item>#00BCD4</item>
+        <item>#FF5722</item>
+    </array>
+</resources>

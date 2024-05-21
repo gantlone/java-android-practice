@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -80,7 +82,13 @@ public class HomeFragment extends Fragment {
             Phone pd = (Phone) bundle.getSerializable("phone");
             list.set(pd.getIndex(), pd);
         }
+PhoneLiveData liveData = new ViewModelProvider(getActivity()).get(PhoneLiveData.class);
+        MutableLiveData<ArrayList<Phone>> liste = liveData.getListLiveData();
 
+        ArrayList<Phone> a =  liste.getValue();
+        if(a==null){
+
+        }
 
         //3
         ArrayAdapter<Phone> ada = new ArrayAdapter<>(
@@ -88,6 +96,7 @@ public class HomeFragment extends Fragment {
                 android.R.layout.simple_list_item_1,
                 list
         );
+
 
         //4
         lv.setAdapter(ada);
@@ -99,6 +108,21 @@ public class HomeFragment extends Fragment {
                 itemLiveData.postValue(list.get(i));
                 NavOptions navOptions = new NavOptions.Builder().setPopUpTo(R.id.navigation_home, true).build();
                 MainActivity.navController.navigate(R.id.navigation_dashboard,null,navOptions);
+
+                PopupMenu pm = new PopupMenu(getContext(), view);
+                pm.getMenuInflater().inflate(R.menu.love_roger_roger,pm.getMenu());
+                pm.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        switch (menuItem.getItemId()){
+                            case R.id.home:
+                                Intent it = new Intent(getContext(), MainActivity2.class);
+                                it.putExtra("1233",123);
+
+                        }
+                        return false;
+                    }
+                });
             }
         });
         return root;

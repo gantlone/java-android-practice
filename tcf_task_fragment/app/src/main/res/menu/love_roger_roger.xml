@@ -7,8 +7,9 @@
         android:icon="@drawable/ic_home_black_24dp"
         android:title="Item"
         app:showAsAction="always" />
-    <item android:title="roger"
-        android:id="@+id/roger"/>
+    <item
+        android:id="@+id/roger"
+        android:title="roger" />
     <item android:title="nl"
         android:id="@+id/nl"/>
 </menu>
